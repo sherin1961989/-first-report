@@ -1,0 +1,41 @@
+class BankAccount:
+  def __init__(self):
+      self.balance=0
+  def deposit(self,amount):
+         if (amount>0):
+             self.balance+=amount
+             print("deposit amount sucessfully")
+         else:
+              print("deposit failed")
+  def withdrawal(self,amount):
+           if(amount>0 and amount<=self.balance):
+               self.balance-=amount
+               print("the amount withdraw  successfully")
+           else:
+                 print("insufficient balance")
+  def display(self):
+        print("your current balance is:",self.balance)
+
+
+
+a=BankAccount()
+
+for i in range(0,50):
+    print("1.log in 2.deposit 3. withdrawal 4.cash balance 5.exit")
+    p=int(input("enter your choice:"))
+    if(p==1):
+        entered_account_number = input("enter account number:")
+        entered_pin = input("enter the PIN:")
+        print("login successfully")
+    if(p==2):
+        amount=float(input("enter the deposit amount:"))
+        a.deposit(amount)
+    elif(p==3):
+         amount=float(input("enter the withdrawal amount:"))
+         a.withdrawal(amount)
+    elif(p==4):
+        a.display()
+    elif(p==5):
+        exit()
+else:
+  print("you have entered wrong value")
